@@ -44,7 +44,7 @@ source .venv/bin/activate
 pip install -e .
 ```
 
-### Step 4: Install Node.js dependencies
+### Step 3: Install Node.js dependencies
 ```bash
 cd dwar2pd
 npm install
