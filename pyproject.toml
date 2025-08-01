@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dwar2pd"
+version = "1.0.0"
+description = "A Python package to load DataWarrior (.dwar) files into pandas DataFrames with SMILES decoding"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Krzysztof Baczynski"}
+]
+
+keywords = ["chemistry", "datawarrior", "dwar", "pandas", "smiles", "molecular-data"]
+
+requires-python = ">=3.8"
+dependencies = [
+    "pandas>=1.3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0.0",
+    "pytest-cov>=2.0.0",
+    "black>=22.0.0",
+    "flake8>=4.0.0",
+    "mypy>=0.950",
+]
+
+[project.scripts]
+dwar2pd = "dwar2pd.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["dwar2pd*"]
+
+[tool.setuptools.package-data]
+dwar2pd = ["*.mjs", "*.js", "package.json", "package-lock.json", "node_modules/**/*"]
+
+[tool.ruff]
+target-version = "py38"
+line-length = 88
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+    "C4", # flake8-comprehensions
+    "UP", # pyupgrade
+]
+ignore = [
+    "E501",  # line too long, handled by black
+    "B008",  # do not perform function calls in argument defaults
+    "C901",  # too complex
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto" 

@@ -1,0 +1,16 @@
+{
+  "name": "dwar2pd",
+  "version": "1.0.0",
+  "description": "Automatic SMILES decoding of molecular structures using OpenChemLib.",
+  "main": "ocl_decode.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "openchemlib": "^9.2.0"
+  },
+  "devDependencies": {}
+}

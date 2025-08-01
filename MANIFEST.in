@@ -1,0 +1,13 @@
+include README.md
+include LICENSE
+include pyproject.toml
+
+# Include Node.js files
+include dwar2pd/*.mjs
+include dwar2pd/*.js
+include dwar2pd/package.json
+include dwar2pd/package-lock.json
+recursive-include dwar2pd/node_modules *
+
+# Include documentation
+recursive-include docs *.md
